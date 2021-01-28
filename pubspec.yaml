@@ -31,6 +31,14 @@ dependencies:
   url_launcher: ^5.7.10
   spotify_sdk: ^1.0.0
   flutter_wall_layout: ^1.0.0
+  google_fonts: ^1.1.1
+  flutter_bloc: ^6.1.1
+  cached_network_image: ^2.3.3
+  bloc: ^6.1.1
+  dio: ^3.0.10
+  intl: ^0.16.1
+  loader_overlay: ^1.1.1
+  equatable: ^1.2.5
 
 dev_dependencies:
   flutter_test:

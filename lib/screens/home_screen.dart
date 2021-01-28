@@ -52,120 +52,185 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: colorBackground,
-      body: Padding(
-        padding: EdgeInset.all(20),
+      body:Scrollbar(
         child: SingleChildScrollView(
-          child: Column(
-            children:[
-              Text(
-                "MooDay", textAlign: TextAlign.center
-              ),
-              Text(
-                "Save Your Favourite music by mood\nThe music is classified using Spotify's audio feature", textAlign: TextAlign.center
-              ),
-              Text(
-                "Your Favourite Tracks", textAlign: TextAlign.center
-              ),
-              Column(
-                children:[
-                  RaisedButton(
-                    shape: RoundedRectangleBorder(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+            child: Column(
+              children:[
+                Text(
+                  "MooDay", textAlign: TextAlign.center
+                ),
+                SizedBox(height: 20),
+                Text(
+                  "Save Your Favourite music by mood\nThe music is classified using Spotify's audio feature", textAlign: TextAlign.center
+                ),
+                SizedBox(height: 20),
+                Text(
+                  "Your Favourite Tracks", textAlign: TextAlign.center
+                ),
+                SizedBox(height: 20),
+                Row(
+                  children:[
+                    // RaisedButton(
+                    //   shape: RoundedRectangleBorder(
+                    //     borderRadius: BorderRadius.circular(20.0),
+                    //     side: BorderSide(color: Colors.white)
+                    //   ),
+                    //   color: Colors.white,
+                    //   onPressed:(){},
+                    //   child : Text(
+                    //     "last month"
+                    //   )
+                    // )
+                    Container(
+                        
+                    ),
+                    Material(
                       borderRadius: BorderRadius.circular(20.0),
-                      side: BorderSide(color: Colors.white)
+                      child: InkWell(
+                        borderRadius: BorderRadius.circular(20.0),
+                        // When the user taps the button, show a snackbar.
+                        onTap: () {
+                          Scaffold.of(context).showSnackBar(SnackBar(
+                            content: Text('Tap'),
+                          ));
+                        },
+                        child: Container(
+                          padding: EdgeInsets.all(12.0),
+                          child: Text('last month'),
+                        ),
+                      )
                     ),
-                    color: Colors.white,
-                    onPressed:(){},
-                    child : Text(
-                      "last month"
+                    Material(
+                      borderRadius: BorderRadius.circular(20.0),
+                      child: InkWell(
+                        borderRadius: BorderRadius.circular(20.0),
+                        // When the user taps the button, show a snackbar.
+                        onTap: () {
+                          Scaffold.of(context).showSnackBar(SnackBar(
+                            content: Text('Tap'),
+                          ));
+                        },
+                        child: Container(
+                          padding: EdgeInsets.all(12.0),
+                          child: Text('last 6 month'),
+                        ),
+                      )
+                    ),
+                    Material(
+                      borderRadius: BorderRadius.circular(20.0),
+                      child: InkWell(
+                        borderRadius: BorderRadius.circular(20.0),
+                        // When the user taps the button, show a snackbar.
+                        onTap: () {
+                          Scaffold.of(context).showSnackBar(SnackBar(
+                            content: Text('Tap'),
+                          ));
+                        },
+                        child: Container(
+                          padding: EdgeInsets.all(12.0),
+                          child: Text('all time'),
+                        ),
+                      )
                     )
-                  )
-                ]
-              ),
-              Row(
-                children:[
-                  Expanded(
-                    child: Container(
-                      padding: EdgeInsets.all(20),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color.fromRGBO(14,0,21, 0.08),
-                            spreadRadius: 0,
-                            blurRadius: 10,
-                            offset: Offset(0, 4), // changes position of shadow
-                          ),
-                        ],
-                      ),
-                      child: Text(
-                        "What's your mood?"
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      padding: EdgeInsets.all(20),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color.fromRGBO(14,0,21, 0.08),
-                            spreadRadius: 0,
-                            blurRadius: 10,
-                            offset: Offset(0, 4), // changes position of shadow
-                          ),
-                        ],
-                      ),
-                      child: Column(
-                        children:[
-                          Text(
-                            "What's your mood?"
-                          ),
-                          Row(
-                            children:[
-                              
-                              Slider(
-                                value: moodValue,
-                                onChanged:(f){
-                                  setState((){
-                                    moodValue = f;
-                                  });
-                                }
-                              )
-                            ]
-                          )
-                        ]
+                  ]
+                ),
+                Row(
+                  children:[
+                    Expanded(
+                      child: Container(
+                        padding: EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Color.fromRGBO(14,0,21, 0.08),
+                              spreadRadius: 0,
+                              blurRadius: 10,
+                              offset: Offset(0, 4), // changes position of shadow
+                            ),
+                          ],
+                        ),
+                        child: Text(
+                          "What's your mood?"
+                        ),
                       ),
                     ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      padding: EdgeInsets.all(20),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color.fromRGBO(14,0,21, 0.08),
-                            spreadRadius: 0,
-                            blurRadius: 10,
-                            offset: Offset(0, 4), // changes position of shadow
-                          ),
-                        ],
-                      ),
-                      child: Text(
-                        "What's your mood?"
+                    Expanded(
+                      child: Container(
+                        padding: EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Color.fromRGBO(14,0,21, 0.08),
+                              spreadRadius: 0,
+                              blurRadius: 10,
+                              offset: Offset(0, 4), // changes position of shadow
+                            ),
+                          ],
+                        ),
+                        child: Column(
+                          children:[
+                            Text(
+                              "What's your mood?"
+                            ),
+                            SizedBox(height: 20),
+                            Container(
+                              height: 1,
+                              decoration: BoxDecoration(
+                                color: Colors.grey[500],
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                            Row(
+                              children:[
+                                
+                                Slider(
+                                  value: moodValue,
+                                  onChanged:(f){
+                                    setState((){
+                                      moodValue = f;
+                                    });
+                                  }
+                                )
+                              ]
+                            )
+                          ]
+                        ),
                       ),
                     ),
-                  )
-                ],
-              ),
-            ]
+                    Expanded(
+                      child: Container(
+                        padding: EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Color.fromRGBO(14,0,21, 0.08),
+                              spreadRadius: 0,
+                              blurRadius: 10,
+                              offset: Offset(0, 4), // changes position of shadow
+                            ),
+                          ],
+                        ),
+                        child: Text(
+                          "What's your mood?"
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ]
+            )
           )
         )
-      )
+      )  
       // body: buildWallLayout(),
     );
   }
