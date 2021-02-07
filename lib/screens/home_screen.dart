@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mooday/constant.dart';
 import 'package:spotify_sdk/spotify_sdk.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'dart:html';
 import 'dart:ui';
 
 import 'package:flutter_wall_layout/flutter_wall_layout.dart';
@@ -29,6 +27,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   String _counter = "0";
   double moodValue = 0.0;
+  int categoryButtonActive = 0;
 
   @override
   void initState() {
@@ -59,18 +58,31 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               children:[
                 Text(
-                  "MooDay", textAlign: TextAlign.center
+                  "MooDay", 
+                  textAlign: TextAlign.center, 
+                  style: Theme.of(context).textTheme.headline5.copyWith(
+                    color: colorPrimary,
+                    fontWeight: FontWeight.bold
+                  ),
                 ),
                 SizedBox(height: 20),
                 Text(
                   "Save Your Favourite music by mood\nThe music is classified using Spotify's audio feature", textAlign: TextAlign.center
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 50),
                 Text(
-                  "Your Favourite Tracks", textAlign: TextAlign.center
+                  "Your Favourite Tracks", 
+                  textAlign: TextAlign.center, 
+                  style: Theme.of(context).textTheme.headline6.copyWith(
+                    color: colorPrimary,
+                    fontWeight: FontWeight.bold
+                  ),
                 ),
                 SizedBox(height: 20),
+                Container(height: 2, width: double.infinity, color: Colors.grey[300]),
+                SizedBox(height: 20),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children:[
                     // RaisedButton(
                     //   shape: RoundedRectangleBorder(
@@ -83,12 +95,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     //     "last month"
                     //   )
                     // )
-                    Container(
-                        
-                    ),
                     Material(
                       borderRadius: BorderRadius.circular(20.0),
+                      color: Colors.transparent,
                       child: InkWell(
+                        splashColor: Colors.white,
+                        hoverColor: Colors.white,
                         borderRadius: BorderRadius.circular(20.0),
                         // When the user taps the button, show a snackbar.
                         onTap: () {
@@ -102,25 +114,51 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       )
                     ),
-                    Material(
-                      borderRadius: BorderRadius.circular(20.0),
-                      child: InkWell(
+                    SizedBox(width: 20),
+                    MouseRegion(
+                      onHover: (event) {
+                        setState((){
+                          categoryButtonActive = 1;
+                        });
+                      },
+                      onExit: (event) {
+                        setState((){
+                          categoryButtonActive = 4;
+                        });
+                      },
+                      child: Material(
+                        // elevation: categoryButtonActive == 1 ? 10 : 0,
+                        color: Colors.transparent,
                         borderRadius: BorderRadius.circular(20.0),
-                        // When the user taps the button, show a snackbar.
-                        onTap: () {
-                          Scaffold.of(context).showSnackBar(SnackBar(
-                            content: Text('Tap'),
-                          ));
-                        },
-                        child: Container(
-                          padding: EdgeInsets.all(12.0),
-                          child: Text('last 6 month'),
-                        ),
-                      )
+                        child: InkWell(
+                          splashColor: Colors.white,
+                          hoverColor: Colors.white,
+                          borderRadius: BorderRadius.circular(20.0),
+                          // When the user taps the button, show a snackbar.
+                          onTap: () {
+                            Scaffold.of(context).showSnackBar(SnackBar(
+                              content: Text('Tap'),
+                            ));
+                          },
+                          child: Container(
+                            padding: EdgeInsets.all(12.0),
+                            child: Text(
+                              'last 6 month',
+                              style: Theme.of(context).textTheme.bodyText1.copyWith(
+                                color: categoryButtonActive == 1 ? colorPrimary : colorText,
+                              ),
+                            ),
+                          ),
+                        )
+                      ),
                     ),
+                    SizedBox(width: 20),
                     Material(
+                      color: Colors.transparent,
                       borderRadius: BorderRadius.circular(20.0),
                       child: InkWell(
+                        splashColor: Colors.white,
+                        hoverColor: Colors.white,
                         borderRadius: BorderRadius.circular(20.0),
                         // When the user taps the button, show a snackbar.
                         onTap: () {
@@ -136,6 +174,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     )
                   ]
                 ),
+                SizedBox(height: 50),
                 Row(
                   children:[
                     Expanded(
