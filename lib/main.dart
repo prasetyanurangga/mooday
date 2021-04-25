@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mooday/bloc/mooday/track_bloc.dart';
+import 'package:mooday/bloc/track/track_bloc.dart';
+import 'package:mooday/bloc/mood/mood_bloc.dart';
 import 'package:mooday/constant.dart';
 import 'package:mooday/models/track_model.dart';
 import 'package:mooday/provider/api_provider.dart';
@@ -32,6 +33,9 @@ class MyApp extends StatelessWidget {
         providers: [
           BlocProvider<TrackBloc>(
             create: (context)  => TrackBloc(),
+          ),
+          BlocProvider<MoodBloc>(
+            create: (context)  => MoodBloc(),
           ),
         ],
         child: MaterialApp(

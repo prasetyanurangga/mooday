@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:mooday/bloc/mooday/track_event.dart';
-import 'package:mooday/bloc/mooday/track_state.dart';
+import 'package:mooday/bloc/track/track_event.dart';
+import 'package:mooday/bloc/track/track_state.dart';
 import 'package:mooday/models/track_model.dart';
 import 'package:mooday/provider/response_data.dart';
 import 'package:mooday/repository/mooday_repository.dart';
