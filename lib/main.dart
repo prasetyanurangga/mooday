@@ -4,11 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mooday/bloc/track/track_bloc.dart';
 import 'package:mooday/bloc/mood/mood_bloc.dart';
 import 'package:mooday/constant.dart';
-import 'package:mooday/models/track_model.dart';
 import 'package:mooday/provider/api_provider.dart';
 import 'package:mooday/repository/mooday_repository.dart';
-import 'package:mooday/screens/get_track_screen.dart';
-import 'package:mooday/screens/home_screen.dart';
 import 'package:mooday/router.dart';
 
 void main() {
