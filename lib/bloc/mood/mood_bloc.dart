@@ -24,6 +24,8 @@ class MoodBloc extends Bloc<MoodEvent, MoodState> {
         final ResponseData<dynamic> response = await moodayRepository.getAudioFeatures({
           "id" : event.url
         });
+
+        print(response);
         var finalResponse = response.data;
         if (response.status == Status.ConnectivityError) {
           yield const MoodFailure(error: "");
@@ -34,7 +36,7 @@ class MoodBloc extends Bloc<MoodEvent, MoodState> {
           yield MoodFailure(error: response.message);
         }
       } catch (error) {
-        // print(error);
+        print(error);
         yield MoodFailure(error: error.toString());
       }
     }

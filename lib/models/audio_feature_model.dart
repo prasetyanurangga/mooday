@@ -339,24 +339,24 @@ class AudioFeatureModel {
       this.valence});
 
   AudioFeatureModel.fromJson(Map<String, dynamic> json) {
-    acousticness = json['acousticness'];
+    acousticness = json['acousticness'].toDouble();
     analysisUrl = json['analysis_url'];
-    danceability = json['danceability'];
+    danceability = json['danceability'].toDouble();
     durationMs = json['duration_ms'];
-    energy = json['energy'];
+    energy = json['energy'].toDouble();
     id = json['id'];
-    instrumentalness = json['instrumentalness'];
+    instrumentalness = json['instrumentalness'].toDouble();
     key = json['key'];
-    liveness = json['liveness'];
-    loudness = json['loudness'];
+    liveness = json['liveness'].toDouble();
+    loudness = json['loudness'].toDouble();
     mode = json['mode'];
-    speechiness = json['speechiness'];
+    speechiness = json['speechiness'].toDouble();
     tempo = json['tempo'];
     timeSignature = json['time_signature'];
     trackHref = json['track_href'];
     type = json['type'];
     uri = json['uri'];
-    valence = json['valence'];
+    valence = json['valence'].toDouble();
   }
 
   Map<String, dynamic> toJson() {

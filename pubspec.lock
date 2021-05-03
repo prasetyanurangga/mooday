@@ -220,13 +220,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.3"
-  json_annotation:
-    dependency: transitive
-    description:
-      name: json_annotation
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "3.1.1"
   loader_overlay:
     dependency: "direct main"
     description:
@@ -234,13 +227,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.1"
-  logger:
-    dependency: transitive
-    description:
-      name: logger
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.9.4"
   matcher:
     dependency: transitive
     description:
@@ -372,13 +358,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0"
-  spotify_sdk:
-    dependency: "direct main"
-    description:
-      name: spotify_sdk
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.0"
   sqflite:
     dependency: transitive
     description:
